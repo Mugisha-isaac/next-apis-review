@@ -1,5 +1,8 @@
 import {NextApiRequest,NextApiResponse} from 'next';
 
 export default function getAllVehicles(req:NextApiRequest,res:NextApiResponse){
-       res.json({message:'hello world', method:req.method})
+    if(req.method !=="GET"){
+        res.status(500).json({message:'invalid method request'})
+    }
+    res.json({message:'hello world', method:req.method})
 }
