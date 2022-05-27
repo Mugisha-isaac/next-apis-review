@@ -1,19 +1,28 @@
 --UP
    
    CREATE TABLE Person(
-       id INTERGER  PRIMARY KEY AUTOINCREMENT,
+       id INTEGER  PRIMARY KEY AUTOINCREMENT,
        name TEXT,
        email TEXT
    );
 
    CREATE TABLE Vehicle(
-       id INTERGER  PRIMARY KEY AUTOINCREMENT,
+       id INTEGER  PRIMARY KEY AUTOINCREMENT,
        brand TEXT,
        model TEXT,
-       ownerId INTERGER  REFERENCES Person(id)
+       ownerId INTEGER  REFERENCES Person(id)
    );
+
+
+   INSERT INTO Person(name,email) values ('bruno','bruno@antunes.pt');
+   INSERT INTO Person(name,email) values ('jack','jack@antunes.pt');
+
+
+   INSERT INTO Vehicle(brand,model,ownerId) values('audi','R8',1);
+   INSERT INTO Vehicle(brand,model,ownerId) values('merecedes','Benz',2);
+   
 
 --DOWN
 
-DROP TABLE Person;
-DROP TABLE Vehicle;
+-- DROP TABLE Person;
+-- DROP TABLE Vehicle;
