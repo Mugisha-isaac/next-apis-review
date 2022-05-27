@@ -10,7 +10,7 @@
        id INTERGER  PRIMARY KEY AUTOINCREMENT,
        brand TEXT,
        model TEXT,
-       ownerId INTERGER FOREIGN KEY REFERENCES Person(id)
+       ownerId INTERGER  REFERENCES Person(id)
    );
 
 --DOWN
